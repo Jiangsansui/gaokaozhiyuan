@@ -19,18 +19,23 @@
           </el-table-column>
           <el-table-column
             label="院校代码"
-          width="60">
+            width="60">
             <template slot-scope="scope">
               <span >{{ scope.row.yxdm }}</span>
             </template>
           </el-table-column>
-          <el-table-colum
+          <el-table-column
             label="院校名称"
-          width="300">
-            <template slot-scope="scope">
-              <span >{{ scope.row.yxmc }}</span>
-            </template>
-          </el-table-colum>
+            width="250">
+            <el-popover slot-scope="scope"
+              placement="top-start"
+              trigger="hover"
+              content="一流学科：化学，生物学，生态学，机械工程，光学工程，
+材料科学与工程，电器工程，控制科学与工程，计算机科学与技术，农业工程，环境科学与
+工程，软件工程，园艺学，植物保护，基础医学，药学，管理科学与工程，农林经济管理">
+             <span style="color: red;" slot="reference">{{ scope.row.yxmc }}</span>
+            </el-popover>
+          </el-table-column>
           <el-table-column
             label="院校评级">
             <template slot-scope="scope">
@@ -101,7 +106,7 @@
           <el-table-column
             label="历年参考" width="60">
             <template slot-scope="scope">
-              <span >{{ scope.row.lnck }}</span>
+              <span @click="goFirst">{{ scope.row.lnck }}</span>
             </template>
           </el-table-column>
         </el-table>
@@ -112,6 +117,7 @@
 <script>
     export default {
         name: "tabComponent",
+
       data() {
         return {
           tableData: [{
@@ -192,6 +198,11 @@
         handleDelete(index, row) {
           console.log(index, row);
         }
+      },
+      methods:{
+          goFirst:function () {
+            this.$router.push({path: '/alert'})
+          }
       }
     }
 </script>
@@ -200,4 +211,5 @@
 .con{
   width:100%;
 }
+
 </style>
