@@ -211,6 +211,23 @@
              pf: ''
             }]
         }
+      },
+      created(){
+          this.getList()
+      },
+      methods:{
+        getList(){
+          this.$http
+            .get('api/college/3')
+            .then(function (res) {
+              this.tableData=res.data.item
+                console.log(res.data.item)
+              }.bind(this)
+            ).catch(function (err) {
+              console.log(err)
+            }.bind(this)
+          )
+        },
       }
     }
 </script>

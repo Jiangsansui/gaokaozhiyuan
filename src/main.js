@@ -5,7 +5,11 @@ import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import axios from 'axios'
 
+
+axios.defaults.baseURL="http://10.10.10.215:3000"
+Vue.prototype.$http = axios;
 Vue.use(ElementUI)
 Vue.config.productionTip = false
 
