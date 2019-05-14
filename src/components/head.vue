@@ -12,8 +12,13 @@
       <div class="right">
         <div class="rig"><div class="vip">会员</div></div>
         <div class="text">启航志愿帮—2018浙江省平行志愿筛选软件1.4（QQ群：1234567）</div>
-        <div class="screenbtn">筛选器</div>
+        <div class="screenbtn">
+          <span @click="change">筛选器</span>
+<!--          <span @click="changeT" v-else>筛选器</span>-->
+          <test-Component  v-if="a===true"></test-Component>
+        </div>
         <div class="search">志愿检索</div>
+
       </div>
     </div>
   </div>
@@ -21,8 +26,15 @@
 </template>
 
 <script>
+  import testComponent from './test';
   export default {
     name: "head",
+    data(){
+      return{
+       a:false
+      }
+    },
+    components: { testComponent },
     methods:{
       goto(n){
         if(n===0){
@@ -32,7 +44,10 @@
         }else{
           this.$router.push({path:'/tabExplain'})
         }
-      }
+      },
+      change(){
+        this.a=!this.a
+      },
     }
   }
 </script>
@@ -105,9 +120,10 @@
         }
 
         .screenbtn {
+
           margin-top: 10px;
           line-height: 50px;
-          width: 6%;
+          z-index: 999;
           height: 70%;
           background-color: #6c99ed;
         }
@@ -120,6 +136,7 @@
           background-color: yellow;
           margin-left: 1%;
         }
+
       }
     }
   }

@@ -5,7 +5,8 @@ import alert from '@/components/alert'
 import tabSelected from '@/components/tabSelected'
 import tabExplain from '@/components/tabExplain'
 import head from '@/components/head'
-import menu from '@/components/menu'
+import test from '@/components/test'
+
 Vue.use(Router)
 
 export default new Router({
@@ -36,9 +37,9 @@ export default new Router({
       component: head
     },
     {
-      path: '/menu',
-      name: 'menu',
-      component: menu
+      path: '/test',
+      name: 'test',
+      component: test
     }
 
   ]

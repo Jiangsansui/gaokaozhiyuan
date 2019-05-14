@@ -13,6 +13,13 @@ export default {
 </script>
 
 <style>
+  .el-input-number{
+    margin-top: 5% !important;
+  }
+  .el-input-number:last-child{
+    margin-top: -9% !important;
+  }
+  /*表格样式*/
   .el-popover{
     background: #6a6a6a !important;
     color: white;
@@ -34,6 +41,28 @@ export default {
     width: 400px;
     min-height: 400px;
     z-index: 999;
+  }
+  /*省份筛选框*/
+  .el-checkbox.is-bordered{
+    width:20%;
+    float:left;
+    margin-right:2.5%;
+    margin-left: 2%;
+    margin-top: 1%;
+    height: 35px;
+  }
+  /*招生计划数计数器*/
+  .el-input-number{
+    width: 210px;
+    border: 1px solid white;
+    float: left;
+    margin-left:3%;
+    margin-top: 5%;
+  }
+  .el-input-number:last-child{
+    float: right;
+    margin-right: 3%;
+
   }
   body{
     margin: 0;
