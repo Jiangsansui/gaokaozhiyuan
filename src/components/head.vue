@@ -14,9 +14,9 @@
         <div class="text">启航志愿帮—2018浙江省平行志愿筛选软件1.4（QQ群：1234567）</div>
         <div class="screenbtn">
           <span @click="change">筛选器</span>
-<!--          <span @click="changeT" v-else>筛选器</span>-->
-          <test-Component  v-if="a===true"></test-Component>
+
         </div>
+        <test-Component  v-if="a===true"></test-Component>
         <div class="search">志愿检索</div>
 
       </div>

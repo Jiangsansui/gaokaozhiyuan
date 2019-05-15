@@ -97,7 +97,7 @@
         <span style="float: right">科目筛选（多选）</span>
       </div>
       <div class="conThree">
-        <el-checkbox  border v-for="data in fivesixList"
+        <el-checkbox  border v-for="data in sixList"
                       :label="data.id"
                       :key="data.id">
           {{data.namePro}}
